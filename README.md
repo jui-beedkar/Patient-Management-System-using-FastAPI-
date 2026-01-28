@@ -1,68 +1,78 @@
-# Patient-Management-System-using-FastAPI-
-Simple Patient Management System - a full-stack web application designed to manage patient health records and calculate health metrics.
+Patient Management System using FastAPI
 
-This is a Patient Management System - a full-stack web application designed to manage patient health records and calculate health metrics.
+A full-stack Patient Management System designed to manage patient health records efficiently and calculate key health metrics such as BMI and health status. The application features a modern, responsive UI and a robust FastAPI backend with strong data validation.
 
-What It Does
-This is essentially a healthcare data management tool with a modern, user-friendly interface built for managing patient records and health metrics.
-The application allows healthcare administrators to:
+Overview
 
-Create, read, update, and delete patient records
-Store patient information including demographics and health metrics
-Automatically calculate Body Mass Index (BMI) and health status verdicts
-Search patients by various fields
-Sort patients by different attributes (age, weight, height, BMI, etc.)
-View patient details individually or in a list format
+The Patient Management System is a healthcare data management tool that allows administrators to create, view, update, delete, search, and sort patient records. It automatically calculates BMI and assigns a health verdict based on standard medical ranges.
 
-Key Features
-✓ CRUD operations for patient management
-✓ Real-time BMI calculation
-✓ Health status classification
-✓ Search functionality
-✓ Multi-field sorting
-✓ Dark/Light theme toggle
-✓ Responsive UI with animations
-✓ Form validation with Pydantic
+This project demonstrates practical usage of FastAPI, Pydantic, and React in a real-world CRUD application.
+
+Features
+
+Create, Read, Update, Delete (CRUD) patient records
+Automatic BMI calculation
+Health status classification based on BMI
+Search patients by multiple fields
+Sort patients by age, height, weight, BMI, etc.
+Dark / Light theme toggle
+Responsive UI with smooth animations
+Input validation using Pydantic
+
+RESTful API architecture
 
 Tech Stack
-Backend:
+Backend
 
 Framework: FastAPI (Python)
 Server: Uvicorn
 Data Storage: JSON file (patients.json)
-Database Format: Pydantic models for data validation
-Middleware: CORS enabled for cross-origin requests
-Frontend:
+Data Validation: Pydantic models
+Middleware: CORS enabled for frontend integration
 
-Framework: React 18 (JSX)
+
+Frontend
+
+Framework: React 18
 Build Tool: Vite
 HTTP Client: Axios
 UI Icons: Lucide React
-Animation Library: Framer Motion
-Styling: CSS with dark/light theme support
+Animations: Framer Motion
+
+Styling: CSS with Dark / Light theme support
 Linting: ESLint
+
 
 Project Flow
 Frontend User Interface
+Displays a list of patients with search and sort functionality
+Modal form to add new patients
+Edit and delete existing patient records
+Dark / Light theme toggle for better UX
 
-React component displays patient list with search, sort, and filter capabilities
-User can add new patients via modal form
-User can edit or delete existing patients
-Dark/Light theme toggle for better UX
+
 API Communication
 
-Frontend makes HTTP requests to the backend via Axios
-Endpoints: /view, /patient/{id}, /create, /edit/{id}, /delete/{id}, /sort
+Frontend communicates with backend using Axios
+
+REST API endpoints:
+/view
+/patient/{id}
+/create
+/edit/{id}
+/delete/{id}
+/sort
+
 Backend Processing
 
-FastAPI validates incoming data using Pydantic models
-Automatically computes BMI (weight ÷ height²) and health verdict based on BMI ranges
+FastAPI validates incoming data using Pydantic
+Automatically computes BMI using weight ÷ height²
+Assigns health verdicts based on BMI ranges
 Manages patient data persistence via JSON file
-Provides sorting and filtering capabilities
 
 Health Verdict Classification
-
-BMI < 18.5 → Underweight
-BMI 18.5-25 → Normal
-BMI 25-30 → Overweight
-BMI ≥ 30 → Obese
+BMI Range	Health Status
+BMI < 18.5	Underweight
+BMI 18.5 – 25	Normal
+BMI 25 – 30	Overweight
+BMI ≥ 30	Obese
